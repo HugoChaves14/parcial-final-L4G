@@ -1,0 +1,83 @@
+ 1   http://127.0.0.1:5000/estidianteshttp://127.0.0.1:5000/estidiantes -method='GET'
+    esta ruta no permite mostrar todos los estudiantes registrados
+
+
+
+
+ 2   http://127.0.0.1:5000/estidianteshttp://127.0.0.1:5000/estidiantes -method='POST'
+    crear un estudiante nuevo estudiante insertansdo los sigueintes parametros: ejemplo
+    {
+        "apellido": "chaves",
+        "email": "lu@gmail.com",
+        "identificacion": "09090",
+        "nombre": "hugo",
+        "telefono": "32322",
+        "semestre": 2
+    }
+
+
+
+3   http://127.0.0.1:5000/estidianteshttp://127.0.0.1:5000/estidiantes/<id>_estudiante -method='PUT'
+    mediante esta ruta permite editar un estudiante pasandole los nuevos datos
+    ejemplo
+    {
+        "apellido": "chaves",
+        "email": "hugo@gmail.com",
+        "identificacion": "09090",
+        "nombre": "hugo",
+        "telefono": "32322",
+        "semestre": 2
+    }
+
+
+4   http://127.0.0.1:5000/estidianteshttp://127.0.0.1:5000/estidiantes/<id>_estudiante -method='DELETE'
+    con esta ruta de podra eliminar un estudiante seleccionado el id del que desea eliminar
+
+
+
+5   http://127.0.0.1:5000/estidianteshttp://127.0.0.1:5000/estidiantes-method='GET'
+    con esta ruta de podra mostrar todos los estudiantes registrados 
+
+
+
+
+6   http://127.0.0.1:5000/estidianteshttp://127.0.0.1:5000/materias -method='POST'
+    atraves de esta ruta permite crear una nueva materia 
+
+
+7   http://127.0.0.1:5000/estidianteshttp://127.0.0.1:5000/materias -method='GET'
+    atraves de esta ruta nos permite visuializar todas las materias registradas
+
+
+
+8   http://127.0.0.1:5000/estidianteshttp://127.0.0.1:5000/materias/<id_materia>/estudiantes method= 'GET'
+    atraves de esta ruta podemos visuializar los estudiante registrados a determinada materia 
+
+9   http://127.0.0.1:5000/estidianteshttp://127.0.0.1:5000/materias/<id_materia>/estudiantes/<id_estudiante> method= 'DELETE'
+    atraves de esta ruta podemos eliminar un estudiante que se encuentre registrado a determinada materia 
+
+
+
+10  http://127.0.0.1:5000/estidianteshttp://127.0.0.1:5000/sesiones/<id_sesion>/estudiantes  method='GET'
+    SE VA MANEJAR EL TEMA DE LA ASISTENCIA DE CADA SESION, ESTA PETICION RETORNARA LOS ESTUDIANTES
+    QUE DEBERAN ASISTIR A ESA SESSION SEGUN LA MATERIA EN LA QUE SE HAYA REGISTRADO
+    ENTRE LOS DATOS DE LOS ESTUDIANTES RETORNARA UNA URL MEDIANTE LA CUAL SE CONFIRMARA LA ASISTENCIA 
+    DEL ESTUDIANTE EN ESA SESION DE LA SIGUIENTE MANERA:
+
+        http://127.0.0.1:5000/sesiones/3720/estudiantes --method='PUT'
+        en donde se le pasara un numero segun la situacion en donde 1 = significa que si asistio 
+        y el numero 2= no asistio
+        {
+        "numero": 2
+        }   
+        en el caso que el estudiante no haya marcado el registro de asistencia el dato sera 'NULL'
+
+
+
+11  http://127.0.0.1:5000/estidianteshttp://127.0.0.1:5000/sesiones -method='POST'
+    esta ruta no permite crear una nueva sesion 
+
+
+12  http://127.0.0.1:5000/estidianteshttp://127.0.0.1:5000/materias<id_materia>/sesiones -method='GET'
+    esta ruta nos permite ver el listado de las sesiones de una materia en especifico  
+
